@@ -1,8 +1,9 @@
 Feature: OrangeHRM Admin Functionality
+  Background:
+    Given user launch url in the browser "Base_Url"
 
   @OrangeHrm
   Scenario Outline: Verify user data management in the admin site
-    Given user launch url in the browser "<Url>"
     When user enter username "<Username>" and password "<Password>"
     And user click on login button
     Then verify title of the page
@@ -25,5 +26,5 @@ Feature: OrangeHRM Admin Functionality
     Then user deletes a user data
 
     Examples:
-      | Url      | Username       | Password       | UserRole | EmployeeName  | Status  | AddUsername     | UserPassword |
-      | Base_Url | Admin_Username | Admin_Password | Admin    | James  Butler | Enabled | Test Automation | Test@12345   |
+      | Username       | Password       | UserRole | EmployeeName | Status  | AddUsername     | UserPassword |
+      | Admin_Username | Admin_Password | Admin    | Orange  Test | Enabled | Test Automation | Test@12345   |
